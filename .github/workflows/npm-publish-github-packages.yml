@@ -1,4 +1,4 @@
-name: @amalgamio/js-utils
+name: js-utils
 
 on:
   push:
