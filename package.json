@@ -2,17 +2,10 @@
   "name": "@amalgamio/js-utils",
   "version": "1.0.0-alpha",
   "description": "NodeJS and React Utils and Components",
-  "keywords": [
-    "StringUtils",
-    "Type Checking",
-    "Value coercion",
-    "Valiation"
-  ],
-
+  "keywords": [ "StringUtils", "Type Checking", "Value coercion", "Valiation" ],
   "engines": {
     "node": ">=6.0.0"
   },
-
   "author": "Ronald Dennison <ron.dennison@amalgamio.com>",
   "license": "ISC",
 
@@ -25,10 +18,16 @@
 
   "repository": {
     "type": "git",
-    "url": "git_amalgamio:amalgamio1/js-utils.git"
+    "url": "git+https://github.com/amalgamio1/js-utils.git"
   },
 
+  "bugs": {
+    "url": "https://github.com/amalgamio1/js-utils/issues"
+  },
+  "homepage": "https://github.com/amalgamio1/js-utils#readme",
+
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
     "build": "tsc"
   },
 

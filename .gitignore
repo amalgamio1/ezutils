@@ -1,14 +1,26 @@
-*.js
-!jest.config.js
-*.d.ts
-node_modules
 
-# CDK asset staging directory
+# CDK
 .cdk.staging
 cdk.out
+
+# Node
+node_modules
 package-lock.json
+
+# IDE
 .idea/
+
+# Build
 build
 dist
+*.d.ts
+.npmrc
 
+# Test
+!jest.config.js
 
+# System artifacts
+.github
+**/.DS_Store
+
+notes.txt
