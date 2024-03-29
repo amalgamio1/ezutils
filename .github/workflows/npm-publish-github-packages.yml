@@ -15,7 +15,7 @@ jobs:
           node-version: '20.x'
           registry-url: https://npm.pkg.github.com/
           scope: '@amalgamio1'
-      - run: npm ci
+      - run: npm install
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.AMALGAMIO_NODE_GITHUB_TOKEN}}
