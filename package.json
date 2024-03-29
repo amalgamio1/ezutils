@@ -1,37 +1,36 @@
 {
-  "name": "@amalgamio/js-utils",
+  "name": "@amalgamio/ezutils",
   "version": "1.0.0-alpha",
   "description": "NodeJS and React Utils and Components",
-  "keywords": [ "StringUtils", "Type Checking", "Value coercion", "Valiation" ],
+  "keywords": [
+    "StringUtils",
+    "Type Checking",
+    "Value coercion",
+    "Validation"
+  ],
   "engines": {
     "node": ">=6.0.0"
   },
   "author": "Ronald Dennison <ron.dennison@amalgamio.com>",
   "license": "ISC",
-
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-
+  "repository": "github:amalgamio1/ezutils.git",
   "publishConfig": {
-    "@amalgamio:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
-
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amalgamio1/js-utils.git"
-  },
-
   "bugs": {
-    "url": "https://github.com/amalgamio1/js-utils/issues"
+    "url": "https://github.com/amalgamio1/ezutils/issues"
   },
-  "homepage": "https://github.com/amalgamio1/js-utils#readme",
-
+  "homepage": "https://github.com/amalgamio1/ezutils#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "tsc"
   },
-
   "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.4.3"
   }
 }

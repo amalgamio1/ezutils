@@ -1,26 +1,43 @@
+# Node, Build & artifacts
+node_modules/
+*.d.ts
+# .npmrc
+yarn.lock
+build
+dist
 
-# CDK
-.cdk.staging
-cdk.out
+# Commented-out for `npm ci`
+# package-lock.json
 
-# Node
-node_modules
-package-lock.json
+# dotenv environment variables file
+.env
 
 # IDE
 .idea/
-
-# Build
-build
-dist
-*.d.ts
-.npmrc
+.vscode
 
 # Test
 !jest.config.js
 
 # System artifacts
-.github
-**/.DS_Store
+.DS_Store
 
+# Logs
+logs/
+*.log
+
+# Runtime data
+run/
+*.pid
+
+# Output of 'npm pack'
+*.tgz
+
+# CDK
+.cdk.staging
+cdk.out
+
+# Custom scratch
 notes.txt
+notes.md
+

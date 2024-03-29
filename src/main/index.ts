@@ -1,4 +1,4 @@
-// src/index.ts
+// src/main/index.ts
 export function add(a: number, b: number): number {
     return a + b;
 }
