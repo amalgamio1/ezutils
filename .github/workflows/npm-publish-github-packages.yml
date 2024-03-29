@@ -1,4 +1,4 @@
-  name: js-utils
+name: ezutils
 
 on:
   push:
