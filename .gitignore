@@ -6,7 +6,7 @@ yarn.lock
 build
 dist
 
-# Commented-out for `npm ci`
+# Commented-out for `workflows npm ci`
 # package-lock.json
 
 # dotenv environment variables file
