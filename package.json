@@ -1,13 +1,8 @@
 {
-  "name": "@amalgamio/ezutils",
+  "name": "@amalgamio1/ezutils",
   "version": "1.0.0-alpha",
   "description": "NodeJS and React Utils and Components",
-  "keywords": [
-    "StringUtils",
-    "Type Checking",
-    "Value coercion",
-    "Validation"
-  ],
+  "keywords": ["StringUtils", "Type Checking", "Value coercion", "Validation"],
   "engines": {
     "node": ">=6.0.0"
   },
