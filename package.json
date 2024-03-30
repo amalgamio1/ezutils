@@ -1,6 +1,6 @@
 {
   "name": "@amalgamio1/ezutils",
-  "version": "1.0.0-alpha_0.1",
+  "version": "1.0.0-alpha.0.1",
   "description": "NodeJS and React Utils and Components",
   "keywords": [
     "StringUtils",
