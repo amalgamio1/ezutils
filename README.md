@@ -6,12 +6,9 @@ ___
 ## Usage
 
 #### 1. Create a `.npmrc` file in project root directory.
-```bash
-//.npmrc
-
+```
 @amalgamio1:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=${AMALGAMIO_NODE_GITHUB_TOKEN}
-
 ```
 
 #### 2. Install
@@ -47,15 +44,29 @@ ____
     npm publish --registry=https://npm.pkg.github.com --scope=@amalgamio1
     ```
 
+#### Publish triggered by git-push
+This action is facilitated by [github-workflow](.github/workflows/npm-publish-github-packages.yml). A shared secret (the generated token) - is established on GitHub where _repo-owner_ assigns access levels (write:package, etc...) to the token itself.
+
+The publish-registry is configured in package.json
+```json
+"publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+},
+```
+
+Thus, simply:
+1. `git commit ... `
+2. `git push`
+
 
 ### Generate Token
 ___
 Repository access is facilitated via `shared secret`
 
-See ([Step 10](https://dev.to/srrathi/private-npm-package-for-internal-use-in-your-organisation-using-github-package-registry-and-github-actions-3b2c)) in dev.to tutorial. 
+See ([Step 10](https://dev.to/srrathi/private-npm-package-for-internal-use-in-your-organisation-using-github-package-registry-and-github-actions-3b2c)) in _**dev.to**_ tutorial. 
 
 
-## References
+### References
 ___
   - GitHub Workflows ([docs.github/automating-builds](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs))
   - GitHub Package Registry ([docs.github/packages-registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry))
