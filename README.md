@@ -3,10 +3,26 @@
    A collection of utilities.
    For internal use. A work in progress.
 ___
-## Install
+## Usage
 
+#### 1. Create a `.npmrc` file in project root directory.
+```bash
+//.npmrc
+
+@amalgamio1:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=${AMALGAMIO_NODE_GITHUB_TOKEN}
+
+```
+
+#### 2. Install
 ```bash
 npm install @amalgamio1/ezutils@1.0.0-alpha
+```
+
+
+#### 3. Use
+```typescript
+import { add } from "@amalgamio1/ezutils";
 ```
 
 
