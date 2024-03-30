@@ -1,8 +1,13 @@
 {
   "name": "@amalgamio1/ezutils",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha_0.1",
   "description": "NodeJS and React Utils and Components",
-  "keywords": ["StringUtils", "Type Checking", "Value coercion", "Validation"],
+  "keywords": [
+    "StringUtils",
+    "Type Checking",
+    "Value coercion",
+    "Validation"
+  ],
   "engines": {
     "node": ">=6.0.0"
   },
@@ -10,7 +15,10 @@
   "license": "ISC",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "github:amalgamio1/ezutils.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amalgamio1/ezutils.git"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
