@@ -21,6 +21,7 @@ dist
 
 # System artifacts
 .DS_Store
+**/.DS_Store
 
 # Logs
 logs/
