@@ -1,5 +1,6 @@
+"use strict";
 
-class SecurityUtil {
+module.exports=class SecurityUtil {
   static async hmacBuilder(secret) {
     const {createHmac} = await import('crypto');
     return ({
@@ -8,5 +9,6 @@ class SecurityUtil {
       hmac_sha256_hex: (aString) => createHmac('sha256', secret).digest('hex', aString),
     })
   }
-
 }
+
+// module.exports=new SecurityUtil()

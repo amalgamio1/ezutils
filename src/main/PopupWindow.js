@@ -1,4 +1,5 @@
-export default function PopupWindow(receiveMessage) {
+
+module.exports=function PopupWindow(receiveMessage) {
   let windowObjectReference = null;
   let previousUrl = null;
   
