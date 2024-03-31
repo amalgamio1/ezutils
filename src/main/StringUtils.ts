@@ -1,5 +1,20 @@
 "use strict";
 import * as fs from 'fs';
+//
+// interface IStringUtils {
+//   isBlank: (val: any) => boolean;
+//   isNotBlank: (val: string) => boolean;
+//   isNotNull: (val: any) => boolean;
+//   // capitalize: (str: string) => string;
+//   // equals_ignore_case: (a: string, b: string) => boolean;
+//   // snake2Camel: (str: string) => string;
+//   // renderTemplateString: (template: string, values: Record<string, string>) => string;
+//   // readFileToString(filePath: string): Promise<string>;
+//   // renderTemplate: (path: string, values: Record<string, string>) => Promise<string>;
+//   // saveStringToFile(output: string, filePath: string): Promise<boolean>;
+//   // render: (templatePath: string, destPath: string, values: Record<string, string>) => Promise<boolean>;
+// }
+//
 
 export default class StringUtils {
 
@@ -12,7 +27,7 @@ export default class StringUtils {
 
   static isNotNull = (val: any): boolean => val != null
   static capitalize = (str: string): string => str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
-  
+
   static equals_ignore_case = (a: string, b: string) => a.toUpperCase() == b.toUpperCase()
 
   static snake2Camel = (str: string) => str.split("-")
@@ -63,7 +78,5 @@ export default class StringUtils {
       .then(template => StringUtils.renderTemplate(template, values))
       .then(output => StringUtils.saveStringToFile(output, destPath));
   }
-
-
 }
 
