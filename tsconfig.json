@@ -110,12 +110,16 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
 //    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
 
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "paths": {
-      "@amalgamio1/ezutils": ["./src/main/index.ts"]
-    }
+//    "declaration": true,
+//    "declarationMap": true,
+//    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "Node"
+//,
+//    "paths": {
+//      "@amalgamio1/ezutils": ["./src/main/index.ts"]
+//    }
   },
   "include": [
     "src/**/*"

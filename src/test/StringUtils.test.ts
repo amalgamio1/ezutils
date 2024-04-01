@@ -1,5 +1,5 @@
 import {describe, expect, test} from '@jest/globals';
-import { StringUtils } from "../main";
+import {StringUtils} from "../main";
 
 describe("StringUtils module", () => {
 

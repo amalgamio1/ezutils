@@ -1,13 +1,13 @@
 "use strict";
 
-import StringUtils from "./StringUtils";
+import {StringUtils} from "../main";
 
 /**
  * Usage:
  *   const validr = new ValidationUtil(check)
  *   console.log({errors:  validr.validate(values)})
  */
-export default class ValidationUtil {
+export class ValidationUtil {
 
   static PHONE_NUMBER_MIN_LENGTH = 8;
 
