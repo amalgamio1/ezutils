@@ -1,6 +1,6 @@
 "use strict";
 
-import {StringUtils} from "../main";
+import {StringUtils} from "./StringUtils";
 
 /**
  * Usage:
