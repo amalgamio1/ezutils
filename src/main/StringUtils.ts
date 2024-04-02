@@ -1,5 +1,6 @@
 "use strict";
 import * as fs from 'fs';
+import {ExecUtil} from "./";
 
 export class StringUtils {
 
@@ -40,9 +41,16 @@ export class StringUtils {
     });
   }
 
+  /**
+   *
+   * @param path A string path to the template
+   * @param values A Map of placeholders to values
+   * @returns A Promise with the rendered template string
+   */
   static renderTemplate = (path: string, values: Record<string, string>): Promise<string> => {
     return StringUtils.readFileToString(path)
-      .then(template => StringUtils.renderTemplate(template, values));
+      .then(ExecUtil.asIdentity(x => console.log({ path, x })))
+      .then(template => StringUtils.renderTemplateString(template, values));
 
   }
 
@@ -55,13 +63,21 @@ export class StringUtils {
           resolve(true);
         }
       })
-    );
+    )
+    .then(ExecUtil.asIdentity(x => console.log({ filePath, status: x })))
+      ;
   }
 
   static render = (templatePath: string, destPath: string, values: Record<string, string>): Promise<boolean> => {
-    return StringUtils.readFileToString(templatePath)
-      .then(template => StringUtils.renderTemplate(template, values))
+    return StringUtils.renderTemplate(templatePath, values)
+    .then(ExecUtil.asIdentity(x => console.log({ templatePath, status: x })))
       .then(output => StringUtils.saveStringToFile(output, destPath));
   }
+
+
+  static encodeBase64(text: string): string {
+    return Buffer.from(text.replace(/\n/g, "\r\n")).toString('base64');
+  }
+
 }
 

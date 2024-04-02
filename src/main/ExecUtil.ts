@@ -2,7 +2,7 @@
 
 import * as Ramda from "ramda";
 
-export default class ExecUtil {
+export class ExecUtil {
   static runTask = (task: Task): MaybeNothing => Promise.resolve(('then' in task) ? task : task());
 
   /**
