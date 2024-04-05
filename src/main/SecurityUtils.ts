@@ -1,12 +1,12 @@
 import { createHmac } from "crypto";
 
-export type AWS4SigningKeyProps = {
-  secret_key: string;
-  short_date: string;
-  region: string;
-  eventName?: string;
-  service?: string;
-}
+// Signature calculation (AWS Signature Version 4)
+// const kDate = createHmac('sha256', 'AWS4' + secret_key).update(short_date).digest();
+// const kRegion = createHmac('sha256', kDate).update(region).digest();
+// const kService = createHmac('sha256', kRegion).update('s3').digest();
+// const kSigning = createHmac('sha256', kService).update('aws4_request').digest();
+// const signature = createHmac('sha256', kSigning).update(policyStr).digest('hex');
+// @see https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html
 
 export class SecurityUtils {
 
@@ -35,4 +35,14 @@ export class SecurityUtils {
   }
 
 
+
+}
+
+
+export type AWS4SigningKeyProps = {
+  secret_key: string;
+  short_date: string;
+  region: string;
+  eventName?: string;
+  service?: string;
 }

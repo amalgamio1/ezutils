@@ -1,14 +1,16 @@
+export function PopupWindow(
+  receiveMessage: (event: MessageEvent) => void
+): (url: string, name: string) => Window | null {
+  let windowObjectReference: Window | null = null;
+  let previousUrl: string | null = null;
 
-module.exports=function PopupWindow(receiveMessage) {
-  let windowObjectReference = null;
-  let previousUrl = null;
-  
   return (url, name) => {
     // remove any existing event listeners
-    window.removeEventListener('message', receiveMessage);
+    window.removeEventListener("message", receiveMessage);
 
     // window features
-    const strWindowFeatures = 'toolbar=no, menubar=no, width=600, height=700, top=100, left=100';
+    const strWindowFeatures =
+      "toolbar=no, menubar=no, width=600, height=700, top=100, left=100";
 
     if (windowObjectReference === null || windowObjectReference.closed) {
       /* if the pointer to the window object in memory does not exist
@@ -19,20 +21,19 @@ module.exports=function PopupWindow(receiveMessage) {
       then we load it in the already opened secondary window and then
       we bring such window back on top/in front of its parent window. */
       windowObjectReference = window.open(url, name, strWindowFeatures);
-
-      windowObjectReference.focus();
+      windowObjectReference?.focus();
     } else {
       /* else the window reference must exist and the window
       is not closed; therefore, we can bring it back on top of any other
       window with the focus() method. There would be no need to re-create
       the window or to reload the referenced resource. */
-      windowObjectReference.focus();
+      windowObjectReference?.focus();
     }
 
     // add the listener for receiving a message from the popup
-    window.addEventListener('message', event => receiveMessage(event), false);
+    window.addEventListener("message", (event) => receiveMessage(event), false);
     // assign the previous URL
     previousUrl = url;
     return windowObjectReference;
-  }
-};
+  };
+}
