@@ -6,7 +6,7 @@ export { ValidationUtil } from './ValidationUtil';
 export { GlobalCounter } from './GlobalCounter';
 export { ExecUtil } from './ExecUtil';
 export { uniqueId, idMaker } from './random';
-import  PopupWindow from './PopupWindow';
+import { PopupWindow } from './PopupWindow';
 
 
 
