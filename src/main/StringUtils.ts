@@ -68,10 +68,10 @@ export class StringUtils {
       ;
   }
 
-  static render = (templatePath: string, destPath: string, values: Record<string, string>): Promise<boolean> => {
+  static render = (templatePath: string, destPath: string, values: Record<string, string>): Promise<string | boolean> => {
     return StringUtils.renderTemplate(templatePath, values)
     .then(ExecUtil.asIdentity(x => console.log({ templatePath, status: x })))
-      .then(output => StringUtils.saveStringToFile(output, destPath));
+      .then(output => (StringUtils.saveStringToFile(output, destPath) && output));
   }
 
 

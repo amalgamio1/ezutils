@@ -42,7 +42,7 @@ describe("StringUtils module", () => {
   // renderTemplateString = (template: string, values: Record<string, string>): string
   // readFileToString(filePath: string): Promise<string>
   // renderTemplate = (path: string, values: Record<string, string>): Promise<string>
-  // saveStringToFile(output: string, filePath: string): Promise<boolean>
+  // saveStringToFile(output: string, filePath: string): Promise<string | boolean>
   // render = (templatePath: string, destPath: string, values: Record<string, string>): Promise<boolean>
 
 });
