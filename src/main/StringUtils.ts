@@ -2,6 +2,7 @@
 import * as fs from 'fs';
 import {ExecUtil} from "./";
 
+
 export class StringUtils {
 
   static isBlank = (val: any): boolean => [val].filter(StringUtils.isNotNull)
@@ -64,14 +65,15 @@ export class StringUtils {
         }
       })
     )
-    .then(ExecUtil.asIdentity(x => console.log({ filePath, status: x })))
-      ;
+    .then(ExecUtil.asIdentity(x => console.log({ filePath, status: x })));
   }
 
-  static render = (templatePath: string, destPath: string, values: Record<string, string>): Promise<string | boolean> => {
-    return StringUtils.renderTemplate(templatePath, values)
-    .then(ExecUtil.asIdentity(x => console.log({ templatePath, status: x })))
-      .then(output => (StringUtils.saveStringToFile(output, destPath) && output));
+  static render = (templatePath: string, destPath: string, values: Record<string, string>) => {
+    return ExecUtil.chain<any, string | boolean>([
+        () => StringUtils.renderTemplate(templatePath, values),
+        async (output) => (await StringUtils.saveStringToFile(output, destPath)) && output
+      ]
+    )()
   }
 
 

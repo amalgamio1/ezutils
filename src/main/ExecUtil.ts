@@ -2,18 +2,23 @@
 
 import * as Ramda from "ramda";
 
+type ChainFunction<T, R> = (arg?: T) => any|Promise<any>
+
 export class ExecUtil {
   static runTask = (task: Task): MaybeNothing => Promise.resolve(('then' in task) ? task : task());
 
-  /**
-   * Chains I/O between promises
-   * @code(chain(array[(...args) => Promise<R>|any]))
-   * @param {Array<function|Promise>} list An array of Promises or functions that Promises
-   * @returns {any} the final resolved promise
+   /**
+   * Chains I/O between functions, handling both synchronous and asynchronous functions.
+   * @param list An array of functions that take a value and return a new value or a promise of a new value.
+   * @returns A function that takes an initial value and returns a promise with the final resolved value.
    */
-  static chain = (...list: any | any[]) => (acc?: any) => Ramda.flatten(list)
-  .reduce((acc: any, fn: (iarg?: any) => any|Promise<any>) => acc.then(fn), Promise.resolve(acc))
-  // static chain = (...list) => (acc?) => list.reduce((agg,fn) => agg.then(fn), Promise.resolve(acc))
+  static chain = <T, R>(list: Array<ChainFunction<any, any>>): (initialValue?: T) => Promise<R> => {
+    return (initialValue?: T) => {
+      return Ramda.flatten(list).reduce((acc: Promise<any>, fn: ChainFunction<any, any>) => {
+        return acc.then(fn);
+      }, Promise.resolve(initialValue));
+    };
+  };
 
   /**
    * Process Promises sequentially.
